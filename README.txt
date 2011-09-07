@@ -11,9 +11,9 @@ matter of adding the new definitions files to `/etc/fail2ban/*.d/` in
 another class or node configuration.
 
     class overreaction {
-	file { "/etc/fail2ban/action.d/nuke.conf" :
-	     ensure  => present,
-	     source  => "puppet:///modules/overreaction/nuke.conf",
-	     require => Service["fail2ban"],
-	}
+      file { "/etc/fail2ban/action.d/nuke.conf" :
+         ensure  => present,
+         source  => "puppet:///modules/overreaction/nuke.conf",
+         require => Service["fail2ban"],
+      }
     }
