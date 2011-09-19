@@ -1,5 +1,5 @@
 
-class fail2ban::package {
+class fail2ban::install {
 
     package { "fail2ban" :
         ensure => present,

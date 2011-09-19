@@ -1,7 +1,7 @@
 
 class fail2ban {
 
-    include fail2ban::package
+    include fail2ban::install
     include fail2ban::configuration
     include fail2ban::service
 
