@@ -1,5 +1,5 @@
 
-class fail2ban::configuration {
+class fail2ban::configure {
 
     $fail2ban_loglevel = 3
     $fail2ban_log = '/var/log/fail2ban.log'
@@ -36,4 +36,5 @@ class fail2ban::configuration {
         group   => root,
     }
 
+    Class['fail2ban::install'] -> Class['fail2ban::configure']
 }

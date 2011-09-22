@@ -8,5 +8,7 @@ class fail2ban::service {
         hasrestart => true,
     }
 
+
+    Class['fail2ban::configure'] ~> Class['fail2ban::service']
 }
 
