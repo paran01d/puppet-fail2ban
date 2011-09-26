@@ -1,5 +1,7 @@
-
-class fail2ban::configure {
+class fail2ban::configure (
+	$jail_local = $fail2ban::params::jail_local,
+	$jails = []
+) inherits fail2ban::params {
 
 	$fail2ban_loglevel = 3
 	$fail2ban_log = '/var/log/fail2ban.log'
@@ -21,7 +23,7 @@ class fail2ban::configure {
 		content => template('fail2ban/jail.conf'),
 	}
 
-	file { "/etc/fail2ban/jail.local" :
+	file { $jail_local :
 		ensure => present,
 		owner  => "root",
 		group  => "root",
