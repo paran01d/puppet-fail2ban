@@ -21,6 +21,14 @@ class fail2ban::configure {
 		content => template('fail2ban/jail.conf'),
 	}
 
+	file { "/etc/fail2ban/jail.local" :
+		ensure => present,
+		owner  => "root",
+		group  => "root",
+		mode   => 640,
+		content => template('fail2ban/jail.local.erb'),
+	}
+
 	file { "/etc/fail2ban/action.d" :
 		ensure  => directory,
 		recurse => true,
