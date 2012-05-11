@@ -1,8 +1,17 @@
 #
-# This file is managed by Puppet.
+# THIS FILE IS MANAGED BY PUPPET.
 #
+
+[DEFAULT]
+<% if has_variable?("ignoreip") and ignoreip != "" -%>
+ignoreip = <%= ignoreip %>
+<% end -%>
+<% if has_variable?("destemail") and destemail != "" -%>
+destemail = <%= destemail %>
+<% end -%>
 
 <% jails.each do |jail| -%>
 [<%= jail %>]
 enabled = true
+
 <% end -%>
