@@ -1,7 +1,9 @@
 
-class fail2ban::install {
+class fail2ban::install (
+	$packages = $fail2ban::params::packages
+) inherits fail2ban::params {
 
-	package { "fail2ban" :
+	package { $packages :
 		ensure => present,
 	}
 
