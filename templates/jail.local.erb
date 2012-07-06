@@ -10,6 +10,8 @@ ignoreip = <%= ignoreip %>
 destemail = <%= destemail %>
 <% end -%>
 
+backend = polling
+
 <% jails.each do |jail| -%>
 [<%= jail %>]
 enabled = true
