@@ -3,16 +3,16 @@
 #
 
 [DEFAULT]
-<% if has_variable?("ignoreip") and ignoreip != "" -%>
-ignoreip = <%= ignoreip %>
+<% if @ignoreip and @ignoreip != "" -%>
+ignoreip = <%= @ignoreip %>
 <% end -%>
-<% if has_variable?("destemail") and destemail != "" -%>
-destemail = <%= destemail %>
+<% if @destemail and @destemail != "" -%>
+destemail = <%= @destemail %>
 <% end -%>
 
 backend = polling
 
-<% jails.each do |jail| -%>
+<% @jails.each do |jail| -%>
 [<%= jail %>]
 enabled = true
 
