@@ -9,7 +9,7 @@ class fail2ban::configure (
 		ensure => present,
 		owner  => "root",
 		group  => "root",
-		mode   => 640,
+		mode   => "640",
 		content => template('fail2ban/jail.local.erb'),
 	}
 
